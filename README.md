@@ -17,6 +17,38 @@ Kindly ensure you have the following installed on your machine:
 - [ ] An IDE or Editor of your choice
 
 ### Running the Application
+Running the App
+```
+> git clone https://github.com/raunak-r/django_ec2.git
+
+Open Docker (WINDOWS, See DockerFile first 3 lines.)
+> cd <path>/django_ec2/
+> docker build -t django_ec2 -f .\deployment\dockerfile .
+> docker run -p 8000:8000 django_ec2
+Visit localhost:8000 on Chrome.
+```
+
+### Setting Up EC2
+1. Launch EC2 instance as outlined in this [article](https://stackabuse.com/deploying-django-applications-to-aws-ec2-with-docker/)
+2. Download .pem file (this is the private key for the ec2)
+3. Open WSL
+```
+> cp private key to the wsl .ssh folder
+> chmod 400
+>  ssh -i private-key.pem ec2-username@ec2-link.amazonaws.com
+
+> sudo yum upgrade
+> sudo yum install git
+
+> git clone https://github.com/raunak-r/django_ec2.git
+> docker build -t django_ec2 -f ./deployment/dockerfile .
+> docker run -p 8000:8000 django_ec2
+Visit ip-addr:8000/ on Chrome on Local
+```
+
+## OLD COMMANDS FROM Ro6ley's README
+
+### Setting up everything for your development
 
 1. Clone the repository
 ```
@@ -57,9 +89,3 @@ $ docker push <DOCKERHUB_USERNAME>/django_ec2
 ```
 
 9. Deploy on AWS EC2 as outlined in this [article](https://stackabuse.com/deploying-django-applications-to-aws-ec2-with-docker/)
-
-## Contribution
-
-Please feel free to raise issues using this [template](./.github/ISSUE_TEMPLATE.md) and I'll get back to you.
-
-You can also fork the repository, make changes and submit a Pull Request using this [template](./.github/PULL_REQUEST_TEMPLATE.md).
