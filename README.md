@@ -1,6 +1,6 @@
 [![HitCount](http://hits.dwyl.io/ro6ley/django_ec2.svg)](http://hits.dwyl.io/ro6ley/django_ec2)
 
-# Django EC2
+# Django AWS (Integrating Django, EC2, S3, & RDS)
 
 This repository contains the code for this [blogpost](https://stackabuse.com/deploying-django-applications-to-aws-ec2-with-docker/).
 
@@ -62,6 +62,10 @@ $ cd django_ec2
 
 3. If you are using Pipenv, setup the virtual environment and start it as follows:
 ```
+> sudo apt install postgresql postgresql-contrib
+> sudo apt-get install postgresql
+> sudo apt-get install python-psycopg2
+> sudo apt-get install libpq-dev
 $ pipenv install && pipenv shell
 ```
 
